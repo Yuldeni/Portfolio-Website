@@ -17,6 +17,7 @@ app = Flask(__name__)
 Bootstrap5(app)
 app.config['SECRET_KEY'] = "Contraseña123"
 
+#Form for Contact Page
 class ContactForm(FlaskForm):
     name = StringField(label="Your Name", validators=[DataRequired()])
     email = EmailField(label="Your Email", validators=[DataRequired(), Email()])
@@ -24,6 +25,7 @@ class ContactForm(FlaskForm):
     message = StringField(label="Message", validators=[DataRequired()])
     submit = SubmitField(label="Send Message")               
 
+#Routes for each web page
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -38,8 +40,9 @@ def learnings():
 
 @app.route("/contact", methods=["POST", "GET"])
 def contact():
-    form = ContactForm()
+    form = ContactForm() #Creates the form
     if form.validate_on_submit():
+         #If the form is valid, sends the message by email
          message = f"Subject:{form.subject.data}\n\n{form.message.data}\nBest Wishes, {form.name.data} (Email: {form.email.data}).".encode('utf-8')
 
          with smtplib.SMTP("smtp.gmail.com") as connection:
@@ -47,7 +50,7 @@ def contact():
             connection.login(user=my_email, password=my_password) 
             connection.sendmail(from_addr=my_email, to_addrs=my_email, 
                                 msg=message)
-            
+         #Let's user see that the message was sent successfully.      
          flash("Message Sent!")
          return redirect(url_for("contact"))
     return render_template("contact.html", form=form)

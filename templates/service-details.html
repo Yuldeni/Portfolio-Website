@@ -1,0 +1,184 @@
+{% include "header.html" %}
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">My Portfolio</h1>
+        <nav class="breadcrumbs">
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+
+          <div class="col-lg-5">
+            <div class="service-sidebar">
+              <div class="service-overview" data-aos="fade-up" data-aos-delay="100">
+                <div class="overview-header">
+                  <i class="bi bi-briefcase-fill"></i>
+                  <h3>Overview</h3>
+                </div>
+                <div class="overview-content">
+                  <h2>Python Programming</h2>
+                  <p>I've focused on Python because I believe it's the greatest tool for Data Science in the context of Genomic Science. Also, it has great quality of modern features!</p>
+                  <div class="cta-button">
+                    <a href="{{ url_for('contact') }}" class="btn-get-started">Contact me</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="key-benefits" data-aos="fade-up" data-aos-delay="200">
+                <h4>Key Habilities</h4>
+                <ul>
+                  <li><i class="bi bi-check-circle-fill"></i> Core Python Programming</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Object Oriented Programming</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Web Development</li>
+                  <li><i class="bi bi-check-circle-fill"></i> API's</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Data Science</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="service-content">
+              <div class="image-gallery" data-aos="zoom-in" data-aos-delay="100">
+                <div class="service-details-slider swiper init-swiper">
+                  <script type="application/json" class="swiper-config">
+                    {
+                      "loop": true,
+                      "speed": 800,
+                      "autoplay": {
+                        "delay": 5000
+                      },
+                      "slidesPerView": 1,
+                      "effect": "fade",
+                      "navigation": {
+                        "nextEl": ".swiper-button-next",
+                        "prevEl": ".swiper-button-prev"
+                      },
+                      "pagination": {
+                        "el": ".swiper-pagination",
+                        "type": "bullets",
+                        "clickable": true
+                      }
+                    }
+                  </script>
+                  <div class="swiper-wrapper align-items-center">
+                    <div class="swiper-slide">
+                      <img src="static/assets/img/services/morse.webp" alt="" class="img-fluid" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="static/assets/img/services/web-dev.avif" alt="" class="img-fluid" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="static/assets/img/services/game_dev.webp" alt="" class="img-fluid" loading="lazy">
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                </div>
+              </div>
+
+              <div class="service-features" data-aos="fade-up" data-aos-delay="300">
+                <div class="section-header">
+                  <h3>Core Projects</h3>
+                  <div class="divider"></div>
+                </div>
+                <div class="row g-4">
+                  <div class="col-md-6">
+                    <div class="feature-card">
+                      <div class="icon-wrapper">
+                        <i class="bi bi-shield-check"></i>
+                      </div>
+                      <h4>Morse Code Translator</h4>
+                      <p>A nice python based program for translating morse code to text and viceversa.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="feature-card">
+                      <div class="icon-wrapper">
+                        <i class="bi bi-cloud-arrow-up"></i>
+                      </div>
+                      <h4>This Website!</h4>
+                      <p>Core website features ready for use in one website.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="feature-card">
+                      <div class="icon-wrapper">
+                        <i class="bi bi-arrows-angle-expand"></i>
+                      </div>
+                      <h4>In progress...</h4>
+                      <p>Wait for more original projects...</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="feature-card">
+                      <div class="icon-wrapper">
+                        <i class="bi bi-arrows-angle-expand"></i>
+                      </div>
+                      <h4>In progress...</h4>
+                      <p>Wait for more original projects...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="implementation-steps" data-aos="fade-up" data-aos-delay="400">
+                <div class="section-header">
+                  <h3>My Process of Solving Problems</h3>
+                  <div class="divider"></div>
+                </div>
+                <div class="step-container">
+                  <div class="step">
+                    <span class="step-number">01</span>
+                    <div class="step-content">
+                      <h4>Understanding the problem</h4>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <span class="step-number">02</span>
+                    <div class="step-content">
+                      <h4>Get all the tools together</h4>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <span class="step-number">03</span>
+                    <div class="step-content">
+                      <h4>Trying a general aproach</h4>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <span class="step-number">04</span>
+                    <div class="step-content">
+                      <h4>Ask for help if needed</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Service Details Section -->
+
+  </main>
+
+  {% include "footer.html" %}
+
+</body>
+
+</html>

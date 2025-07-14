@@ -1,4 +1,5 @@
 {% include "header.html" %}
+{% from 'bootstrap5/form.html' import render_form %}
 
 <main>
 <!-- Contact Section -->
@@ -11,8 +12,19 @@
         <p>If you want to contact me, feel free to send an email!</p>
       </div><!-- End Section Title -->
 
+      <div class="container">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+            <p class="flash" style="color:green; text-align: center; size: 22px;">{{ message }}</p>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
 
-              <form action="forms/contact.php" method="post" class="php-email-form">
+        {{ render_form(form, novalidate=True) }}
+
+      </div>
+              <!-- <form action="forms/contact.php" method="post" class="php-email-form">
                 <div class="row">
                   <div class="col-md-6 form-group">
                     <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
@@ -41,7 +53,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </section><!-- /Contact Section -->
 </section>
 </main>
